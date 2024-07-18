@@ -1,0 +1,14 @@
+{% extends 'mine_APP/layouts/main_page.html' %}
+{% block title %} Music Add {% endblock %}
+
+
+{% block content_main %}
+        <div class="container">
+        <h1>Music Add</h1>
+    <form class="classBut" action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button>Add</button>
+    </form>
+        </div>
+{% endblock %}

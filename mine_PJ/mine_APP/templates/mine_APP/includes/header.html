@@ -1,0 +1,18 @@
+<header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="{% url 'playlists' %}">Playlist</a></li>
+            <li><a href="{% url 'history' %}">History</a></li>
+        {% if request.user.is_staff %}
+            <li><a href="{% url 'upload_music' %}">Add music</a></li>
+            <li><a href="{% url 'album_page' %}">Albums</a></li>
+        {% endif %}
+            <li><a href="{% url 'logout_page' %}">Logout</a></li>
+            {% if request.user.is_staff %}
+{#                <li><a href="{% url 'admin:index' %}">Admin</a></li>#}
+            {% endif %}
+        </ul>
+    </nav>
+</header>

@@ -1,0 +1,24 @@
+{% extends 'mine_APP/layouts/main_page.html' %}
+
+{% block content_main %}
+      <div class="form-container">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button>Создать</button>
+            </form>
+        </div>
+    <div class="container">
+        <h1>Playlist of {{ request.user }}</h1>
+        <div class="item-container">
+            {% for playlist in new_playlists %}
+                <a href="{% url 'playlist_detail' pk=playlist.id %}" class="item">
+                    <img src="{{ playlist.image.url }}" alt="">
+                    <p>{{ playlist.name }}</p>
+                </a>
+            {% empty %}
+                <p>You don't have any playlists</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

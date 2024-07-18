@@ -1,0 +1,195 @@
+/* Базовые и общие стили */
+body {
+    background: linear-gradient(350deg, #1DB954 0%, #000000 100%);
+    color: #ffffff;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+a{
+    color: #1DB954;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+
+
+
+a:hover, a:focus, button:hover, button:focus {
+    text-decoration: underline;
+    color: #0db043;
+}
+
+/* Шапка и подвал */
+header{
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
+    text-align: center;
+}
+
+/* Навигационное меню */
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+/* Контейнеры и секции */
+.container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Формы и элементы формы */
+input[type="text"], input[type="email"], input[type="password"], select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+}
+
+input[type="submit"], button {
+    background-color: #1DB954;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="submit"]:hover, button:hover {
+    background-color: #0db043;
+    box-shadow: 0 6px 12px rgba(0, 128, 0, 0.5);
+}
+
+/* Элементы списка и карточки */
+.item-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.item, .card {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s ease-in-out;
+}
+
+.item:hover, .card:hover {
+    transform: scale(1.1);
+}
+
+.item img, .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.item .name, .card .title {
+    color: #1DB954;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+/* Пагинация */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    color: #1DB954;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.pagination a.active, .pagination a:hover {
+    background-color: #1DB954;
+    color: white;
+}
+
+/* Аудио плеер */
+audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Заголовки и текст */
+h1, h2, h3, h4, h5, h6 {
+    color: #1DB954;
+    margin-top: 0;
+}
+
+p {
+    color: #ccc;
+}
+
+/* Стили для форм */
+.form-container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    margin: 20px 0;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="file"], select, textarea {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background: #222;
+    color: #fff;
+}
+
+label {
+    color: #1DB954;
+    margin: 5px 0;
+}
+/* Общие стили для кнопок */
+button, input[type="text"] {
+    background-color: #1DB954;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #ffffff;
+    transform: scale(0.5);
+}

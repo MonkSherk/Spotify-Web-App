@@ -1,0 +1,27 @@
+{% extends 'mine_APP/layouts/main_page.html' %}
+
+{% block content_main %}
+    <div class="container">
+        <h1>Information about playlist: </h1>
+        <div class="item-container">
+        <a href="{% url 'playlist_delete' pk=playlist.id %}"><button>Delete</button></a>
+                    <ul class="item-container">
+                        <li>Name: {{ playlist.name }}</li>
+                        <li>Author: {{ playlist.author }}</li>
+                        <li>Is public: {{ playlist.is_public }}</li>
+                           {% for musi in playlist.musics.all %}
+                        <li>Musics: {{ musi }}</li>
+
+                               <form action="" method="post">
+                               {% csrf_token %}
+                               <button type="submit" name="music_id" value="{{ musi.id }}">Delete</button>
+                               </form>
+                               <audio controls>
+                                <source src="{{ musi.audio_file.url }}">
+                               </audio>
+                        {% endfor %}
+                        <li>Created at: {{ playlist.created_at }}</li>
+                    </ul>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'mine_APP/layouts/main_page.html' %}
+{% block title %} Main Page {% endblock %}
+{% block content_main %}
+    <div class="container">
+        <h1>Albums of  {{ user }} user</h1>
+        <p></p>
+        <ul>
+            <h2>Albums:</h2>
+            {% for album in albums %}
+                    <li><a  style="color:white;" href="{% url 'album_detail' pk=album.id %}">{{ album.name }}</a></li>
+                {% empty %}
+                <p>There is no genres</p>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

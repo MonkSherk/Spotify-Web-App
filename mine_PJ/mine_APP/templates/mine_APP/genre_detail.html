@@ -1,0 +1,17 @@
+{% extends 'mine_APP/layouts/main_page.html' %}
+
+{% block content_main %}
+    <div class="container">
+        <h1>Жанр: {{ genre.name }}</h1>
+        <div class="item-container">
+            {% for music in musics %}
+                <a href="{% url 'music_detail' pk=music.id %}" class="item">
+                    <img src="{{ music.image.url }}" alt="">
+                    <div class="name">{{ music.name }}</div>
+                </a>
+            {% empty %}
+                <p>Нету музыки по такому жанру</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

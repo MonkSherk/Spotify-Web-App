@@ -1,0 +1,16 @@
+{% extends 'mine_APP/layouts/main_page.html' %}
+{% block title %} Main Page {% endblock %}
+{% block content_main %}
+    <div class="container">
+        <h1>Welcome back, {{ user }}</h1>
+        <p></p>
+        <ul>
+            <h2>Genres:</h2>
+            {% for genre in genres %}
+                    <li><a  style="color:white;" href="{% url 'genre_detail' pk=genre.id %}">{{ genre.name }}</a></li>
+                {% empty %}
+                <p>There is no genres</p>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'mine_APP/layouts/main_page.html' %}
+
+{% block content_main %}
+<div class="item-container">
+    <div class="item">
+<ul>
+    <img src="{{ music.image.url }}" alt="">
+    <li>Название:{{ music.name }}</li>
+    <li>Жанр:{{ genres_str }}</li>
+</ul>
+        <audio controls>
+            <source src="{{ music.file.url }}">
+        </audio>
+    </div>
+    <form action="" method="post">
+    {% csrf_token %}
+        <select name="playlist" id="">
+            {% for playlist in playlists %}
+            <option value="{{ playlist.id }}">{{ playlist.name }}</option>
+            {% endfor %}
+            <option value="" disabled selected>Your option</option>
+        </select>
+    <button>Choice</button>
+    </form>
+</div>
+{% endblock %}

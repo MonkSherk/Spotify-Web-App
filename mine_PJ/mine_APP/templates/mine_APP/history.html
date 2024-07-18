@@ -1,0 +1,30 @@
+{% extends 'mine_APP/layouts/main_page.html' %}
+
+{% block content_main %}
+<div class="container">
+    <h1>{{ request.user }}'s History</h1>
+    <div class="item-container">
+        {% for history in histories %}
+        <div class="item">
+            <a href="{% url 'music_detail' pk=history.music.id %}" style="color: white">
+                <img src="{{ history.music.image.url }}" alt="">
+                <div>{{  history.music.name }}</div>
+                <audio controls>
+                    <source src="{{ history.music.audio_file.url }}">
+                </audio>
+            </a>
+        </div>
+        {% empty %}
+        <p>There is no music that you listened to</p>
+        {% endfor %}
+    </div>
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">Next</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
